@@ -1,0 +1,15 @@
+*
+.*
+
+!.gitignore
+!README.md
+!LICENSE
+!snakefile
+!samples.csv
+
+!data/
+!data/fastq
+!data/fastq/.gitkeep
+!envs
+!envs/*
+!environment.yaml
