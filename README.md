@@ -1,3 +1,14 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+[contributors-shield]: https://img.shields.io/github/contributors/chtsai0105/smk-genomeasm_nanopore
+[contributors-url]: https://github.com/chtsai0105/smk-genomeasm_nanopore/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/chtsai0105/smk-genomeasm_nanopore
+[issues-url]: https://github.com/chtsai0105/smk-genomeasm_nanopore/issues
+[license-shield]: https://img.shields.io/github/license/chtsai0105/smk-genomeasm_nanopore?label=license
+[license-url]: https://github.com/chtsai0105/smk-genomeasm_nanopore/blob/master/LICENSE
+
 # Snakemake workflow for NANOPORE sequence processing
 
 The flow chart below give you an overview of how this workflow handling 2 NANOPORE long reads data.
@@ -18,15 +29,26 @@ A brief description of the steps:
 
 **Note: the workflow is still under development!! Currently only support for dry-run test.**
 
-## Install the workflow manage system [**snakemake**](https://snakemake.readthedocs.io/en/stable/index.html)
+<br>
 
-Note: if you are working on hpcc@ucr. You can simply load the environmental module to obtain snakemake.
+## Install the workflow management system [**snakemake**](https://snakemake.readthedocs.io/en/stable/index.html)
+Snakemake is a Python based language and execution environment for GNU Make-like workflows.
+The workflow is defined by specifying *rules* in a `snakefile`.
+Rules further specify how to create sets of output files from sets of input files as well as the parameters and the command.
 
+Snakemake automatically determines the dependencies between the rules by matching file names.
+Please refer to [snakemake tutorial page](https://snakemake.readthedocs.io/en/stable/tutorial/basics.html) to see how to define the rules.
+
+We have to make sure whether snakemake is installed in your system before we start.
+
+### UCR hpcc
+UCR hpcc have snakemake installed in environment module. If you're on UCR hpcc you can simply load snakemake module by the following command.
 ```
 module load snakemake
 ```
 
-You can also create your own conda env by the following step:
+### If you're not on UCR hpcc
+If you're NOT on UCR hpcc and you don't have snakemake in the enviornment module, please follow the below steps to create a snakemake conda environment.
 1. First, create an environment named **snakemake**.
 
     ```
@@ -52,8 +74,10 @@ You can also create your own conda env by the following step:
     ```
     mamba install snakemake
     ```
+    
+4. Then you can execute the `snakemake --help` to show the snakemake helping page.
 
-4. Then you can execute the `snakemake --help` to show the snakemake helping page. Snakemake is a Python based language and execution environment for GNU Make-like workflows. The workflow is defined by specifying rules in a `snakefile`. Rules further specify how to create sets of output files from sets of input files as well as the parameters and the command. Snakemake automatically determines the dependencies between the rules by matching file names. Please refer to [snakemake tutorial page](https://snakemake.readthedocs.io/en/stable/tutorial/basics.html) to see how to define the rules.
+<br>
 
 ## Clone the metagenome workflow
 
@@ -62,18 +86,18 @@ Clone the repo to your computer.
 Clone by the following command if you're using public key for github connection.
 
 ```
-git clone --recurse-submodules git@github.com:chtsai0105/smk_genomeasm_nanopore.git
+git clone --recurse-submodules git@github.com:chtsai0105/smk-genomeasm_nanopore.git
 ```
 
 Or clone by https link.
 
 ```
-git clone --recurse-submodules https://github.com/chtsai0105/smk_genomeasm_nanopore.git
+git clone --recurse-submodules https://github.com/chtsai0105/smk-genomeasm_nanopore.git
 ```
 
 ## Folder structure
 
-Next, go to the directory by `cd metagenome-snakemake`. It should contains the following files:
+Next, go to the directory by `cd smk-genomeasm_nanopore`. It should contains the following files:
 
 File                    |Description
 ------------------------|---------------------------------
